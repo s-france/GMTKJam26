@@ -28,12 +28,13 @@ public class ReceivingClick : MonoBehaviour
     }
     public void CheckIfClicked(Vector3 Position)
     {
-        Debug.Log("click");
+        //Debug.Log("click");
         tileCollider = GetComponent<Collider2D>();
         if (tileCollider.OverlapPoint(Position))
         {
-            Debug.Log("True");
+            Debug.Log("clicked!");
+            SendMessage("OnClick", null, SendMessageOptions.DontRequireReceiver);
         }
-        ;
+        
     }
 }

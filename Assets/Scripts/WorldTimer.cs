@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 public class WorldTimer : MonoBehaviour
 {
-    public static UnityEvent TickForward;
+    public static WorldTimer Instance;
+    public UnityEvent TickForward;
     struct Action
     {
         // reference to Action/Event Taken in Timeslot
@@ -19,8 +20,14 @@ public class WorldTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TickForward = new UnityEvent();
-        TickForward.AddListener(ProcessTick);
+        if (Instance == null)
+        {
+            Instance = this;
+            TickForward = new UnityEvent();
+            TickForward.AddListener(ProcessTick);
+        }
+
+        
     }
 
     // Update is called once per frame
