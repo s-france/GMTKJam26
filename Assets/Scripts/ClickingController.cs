@@ -20,11 +20,10 @@ public class ClickingController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Left mouse button clicked!");
+            //Debug.Log("Left mouse button clicked!");
             Vector3 screenPos = Input.mousePosition;
             Vector3 worldPos = mainCam.ScreenToWorldPoint(screenPos);
-            Debug.Log(worldPos.x);
-            Debug.Log(worldPos.y);
+            Debug.Log("Left mouse button clicked! " + worldPos.x + " " + worldPos.y);
             OnClick?.Invoke(worldPos);
         }
     }
