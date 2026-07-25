@@ -6,13 +6,18 @@ using UnityEngine.Events;
 
 public class ClickingController : MonoBehaviour
 {
+    public static ClickingController Instance;
     private Camera mainCam;
-    public  UnityEvent<Vector3> OnClick;
+    public bool GameClickType = false; // false == World Click
+    public UnityEvent<Vector3> OnGameClick;
+    public UnityEvent<Vector3> OnUIClick;
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         mainCam = Camera.main;
-        OnClick = new UnityEvent<Vector3>();
+        OnGameClick = new UnityEvent<Vector3>();
+        OnUIClick = new UnityEvent<Vector3>();
     }
 
     // Update is called once per frame
@@ -20,11 +25,20 @@ public class ClickingController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //Debug.Log("Left mouse button clicked!");
-            Vector3 screenPos = Input.mousePosition;
-            Vector3 worldPos = mainCam.ScreenToWorldPoint(screenPos);
-            Debug.Log("Left mouse button clicked! " + worldPos.x + " " + worldPos.y);
-            OnClick?.Invoke(worldPos);
+            if (GameClickType == false)
+            {
+                Vector3 screenPos = Input.mousePosition;
+                Vector3 worldPos = mainCam.ScreenToWorldPoint(screenPos);
+                Debug.Log("Game Click! " + worldPos.x + " " + worldPos.y);
+                OnGameClick?.Invoke(worldPos);
+            }
+            else
+            { 
+                Vector3 screenPos = Input.mousePosition;
+                Vector3 worldPos = mainCam.ScreenToWorldPoint(screenPos);
+                Debug.Log("UI Click! " + worldPos.x + " " + worldPos.y);
+                OnUIClick?.Invoke(worldPos);
+            }
         }
     }
 }

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ReceivingClick : MonoBehaviour
 {
+    public bool TypeReceiving = false;
     private Collider2D tileCollider;
     private Camera mainCam;
 
@@ -23,8 +25,14 @@ public class ReceivingClick : MonoBehaviour
     void Init()
     { 
         mainCam = Camera.main;
-        
-        mainCam.GetComponent<ClickingController>().OnClick.AddListener(this.CheckIfClicked);
+        if (TypeReceiving == false)
+        {
+            mainCam.GetComponent<ClickingController>().OnGameClick.AddListener(this.CheckIfClicked);
+        }
+        else
+        {
+            mainCam.GetComponent<ClickingController>().OnUIClick.AddListener(this.CheckIfClicked);
+        }
     }
     public void CheckIfClicked(Vector3 Position)
     {
