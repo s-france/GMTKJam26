@@ -29,5 +29,7 @@ public class Fridge : Timer
                 PlayerStats.Instance.Condition = 100;
             }
         }
+        CancelUI cancel = GetComponentInChildren<CancelUI>();
+        cancel.OnClick(); 
     }
 }
