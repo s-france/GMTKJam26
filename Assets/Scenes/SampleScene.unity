@@ -1231,6 +1231,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ed540306a5a4ac5b944aab4d88c7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFXs:
+  - {fileID: 8300000, guid: 1327c6311e21b493e934dd56fd95fc44, type: 3}
+  - {fileID: 8300000, guid: daa9a6aea4af44fa59a07ac5c0191fd6, type: 3}
+  - {fileID: 8300000, guid: 32eda64ceceeb4ec8b48ebc24988332f, type: 3}
+  clickSound: {fileID: 0}
   GameClickType: 0
   OnGameClick:
     m_PersistentCalls:
@@ -6449,11 +6454,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &1988883662 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5609435796468560639, guid: 76a586298ff2c415aa558615882b0611, type: 3}
-  m_PrefabInstance: {fileID: 1871366633}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2040589830
 GameObject:
   m_ObjectHideFlags: 0
