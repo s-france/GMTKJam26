@@ -8,16 +8,23 @@ public class Laundry : Timer
 
     public bool loaded = false;
 
-   
+    public AudioClip StartSound;
+    public AudioClip EndSound;
 
+    void Start()
+    {
+        StartSound = ClickingController.Instance.SFXs[4];
+        EndSound = ClickingController.Instance.SFXs[5];
+    }
     public override void TickForward()
     {
         //running a load
-        if(time >0)
+        if (time > 0)
         {
             AddTime(-1);
 
-        } else if(loaded)
+        }
+        else if (loaded)
         {
             PlayerStats.Instance.Condition -= 2;
         }
@@ -29,7 +36,7 @@ public class Laundry : Timer
             //harm the player based on how much laundry
             if (dirtyLaundry >= 5)
             {
-                PlayerStats.Instance.Condition -= (dirtyLaundry-4) * 4;
+                PlayerStats.Instance.Condition -= (dirtyLaundry - 4) * 4;
             }
         }
 
@@ -38,6 +45,7 @@ public class Laundry : Timer
     public void StartLaundry()
     {
         //set laundry machine timer
+        AudioSource.PlayClipAtPoint(StartSound, transform.position);
         SetTime(dirtyLaundry + 6);
         loaded = true;
 
@@ -47,6 +55,7 @@ public class Laundry : Timer
 
     public void RemoveLaundry()
     {
+        AudioSource.PlayClipAtPoint(EndSound, transform.position);
         if (loaded)
         {
             loaded = false;
