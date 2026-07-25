@@ -19,7 +19,11 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        display.value = time;
+        if (display != null)
+        {
+            display.value = time;
+
+        }
     }
 
     public virtual void TickForward()
