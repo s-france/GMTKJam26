@@ -3645,8 +3645,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 347375670}
-        m_TargetAssemblyTypeName: Laundry, Assembly-CSharp
+      - m_Target: {fileID: 347375676}
+        m_TargetAssemblyTypeName: Stove, Assembly-CSharp
         m_MethodName: TickForward
         m_Mode: 1
         m_Arguments:

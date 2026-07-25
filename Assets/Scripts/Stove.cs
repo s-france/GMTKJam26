@@ -16,9 +16,11 @@ public class Stove : Timer
         if (time > 0){
             AddTime(-1);
         }
+
         if(time < 10 && time > 5){
             FoodReady();
         }
+        
         if(time < 5){
             burnt = true;
         }
