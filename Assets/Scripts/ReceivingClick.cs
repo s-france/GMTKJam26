@@ -10,6 +10,8 @@ public class ReceivingClick : MonoBehaviour
     private Collider2D tileCollider;
     private Camera mainCam;
 
+    public UnityEvent OnClick;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,7 @@ public class ReceivingClick : MonoBehaviour
         {
             Debug.Log("clicked!");
             SendMessage("OnClick", null, SendMessageOptions.DontRequireReceiver);
+            OnClick.Invoke();
         }
         
     }

@@ -25,6 +25,9 @@ public class WorldTimer : MonoBehaviour
             Instance = this;
             TickForward = new UnityEvent();
             TickForward.AddListener(ProcessTick);
+        } else
+        {
+            Destroy(this);
         }
 
         

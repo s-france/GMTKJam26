@@ -28,6 +28,7 @@ public class AlarmClock : Timer
 
     public void GoToSleep()
     {
+        Debug.Log("sleeping!");
         int x = Random.Range(5, 11);
         for (int i = x; i == 0; i--)
         {
