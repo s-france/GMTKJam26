@@ -698,8 +698,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 0}
-  MenuPopUp: {fileID: 0}
+  MenuPopUp: {fileID: 1988883662}
   time: 0
+  eatbutton: {fileID: 0}
+  burnt: 0
 --- !u!1 &418441274
 GameObject:
   m_ObjectHideFlags: 0
@@ -6238,13 +6240,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 8386611730022899677, guid: 76a586298ff2c415aa558615882b0611, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2113366174536163750, guid: 76a586298ff2c415aa558615882b0611, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 3910402928043749702, guid: 76a586298ff2c415aa558615882b0611, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a586298ff2c415aa558615882b0611, type: 3}
 --- !u!1 &1929259085 stripped
 GameObject:
@@ -6431,6 +6427,11 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1988883662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5609435796468560639, guid: 76a586298ff2c415aa558615882b0611, type: 3}
+  m_PrefabInstance: {fileID: 1871366633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2040589830
 GameObject:
   m_ObjectHideFlags: 0
