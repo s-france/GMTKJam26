@@ -28,7 +28,6 @@ public class AlarmClock : Timer
 
     public void GoToSleep()
     {
-        PlayerStats.Instance.Sleeping = true;
         ActOfSleeping(5, 11);
         CancelUI cancel = GetComponentInChildren<CancelUI>();
         cancel.OnClick();
@@ -40,7 +39,6 @@ public class AlarmClock : Timer
         WorldTimer.Instance.TickForward.Invoke();
 
         // Increase Condition By Rand(x)
-        PlayerStats.Instance.Sleeping = false;
     }
 
     public void Snooze()
@@ -51,7 +49,9 @@ public class AlarmClock : Timer
     }
 
     private void ActOfSleeping(int xTimeS, int xTimeE)
-    { 
+    {
+        PlayerStats.Instance.Sleeping = true;
+
         Debug.Log("SLEEPING!");
         int x = Random.Range(xTimeS, xTimeE);
         int y = Random.Range(1, 6);
@@ -67,5 +67,7 @@ public class AlarmClock : Timer
             }
             SleepTick();
         }
+        PlayerStats.Instance.Sleeping = false;
+
     }
 }

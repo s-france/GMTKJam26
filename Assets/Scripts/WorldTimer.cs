@@ -29,8 +29,8 @@ public class WorldTimer : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            TickForward = new UnityEvent();
-            TickForward.AddListener(ProcessTick);
+            //TickForward = new UnityEvent();
+            //TickForward.AddListener(ProcessTick);
         } else
         {
             Destroy(this);
@@ -51,6 +51,8 @@ public class WorldTimer : MonoBehaviour
 
         // Track Action Taken
         CurrentTimeslot++;
+
+        PlayerStats.Instance.Condition -= 3;
 
         //check for endgame state
         if(CurrentTimeslot >= EndTime)

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Laundry : Timer
 {
-
     public int dirtyLaundry = 0;
+
+    public bool loaded = false;
 
    
 
@@ -16,8 +17,13 @@ public class Laundry : Timer
         {
             AddTime(-1);
 
-        } else //dirty laundry
+        } else if(loaded)
         {
+            PlayerStats.Instance.Condition -= 2;
+        }
+        else if (!PlayerStats.Instance.Sleeping) //dirty laundry
+        {
+
             dirtyLaundry++;
 
             //harm the player based on how much laundry
@@ -33,9 +39,20 @@ public class Laundry : Timer
     {
         //set laundry machine timer
         SetTime(dirtyLaundry + 6);
+        loaded = true;
 
         //set dirty laundry to 0
         dirtyLaundry = 0;
+    }
+
+    public void RemoveLaundry()
+    {
+        if (loaded)
+        {
+            loaded = false;
+            time = 0;
+        }
+        
     }
 
 
