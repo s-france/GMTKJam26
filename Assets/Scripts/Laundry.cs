@@ -6,6 +6,7 @@ public class Laundry : Timer
 {
 
     public int dirtyLaundry = 0;
+
    
 
     public override void TickForward()
@@ -18,6 +19,12 @@ public class Laundry : Timer
         } else //dirty laundry
         {
             dirtyLaundry++;
+
+            //harm the player based on how much laundry
+            if (dirtyLaundry >= 5)
+            {
+                PlayerStats.Instance.Condition -= (dirtyLaundry-4) * 4;
+            }
         }
 
     }
@@ -25,12 +32,10 @@ public class Laundry : Timer
     public void StartLaundry()
     {
         //set laundry machine timer
-        SetTime(5);
+        SetTime(dirtyLaundry + 6);
 
         //set dirty laundry to 0
         dirtyLaundry = 0;
-
-
     }
 
 

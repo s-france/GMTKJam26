@@ -312,6 +312,7 @@ MonoBehaviour:
   display: {fileID: 1972456786}
   MenuPopUp: {fileID: 484356564}
   time: 0
+  dirtyLaundry: 0
 --- !u!4 &201969922 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5822452493733172623, guid: 76a586298ff2c415aa558615882b0611, type: 3}
@@ -747,13 +748,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5822452493733172623, guid: 76a586298ff2c415aa558615882b0611, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2040589831}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2113366174536163750, guid: 76a586298ff2c415aa558615882b0611, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 3910402928043749702, guid: 76a586298ff2c415aa558615882b0611, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a586298ff2c415aa558615882b0611, type: 3}
 --- !u!1 &484356564 stripped
 GameObject:
@@ -3114,6 +3109,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1108076921}
         m_TargetAssemblyTypeName: WorldTimer, Assembly-CSharp
         m_MethodName: ProcessTick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 123802563}
+        m_TargetAssemblyTypeName: Laundry, Assembly-CSharp
+        m_MethodName: TickForward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8716,13 +8723,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5822452493733172623, guid: 76a586298ff2c415aa558615882b0611, type: 3}
       insertIndex: -1
       addedObject: {fileID: 850031686}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2113366174536163750, guid: 76a586298ff2c415aa558615882b0611, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 3910402928043749702, guid: 76a586298ff2c415aa558615882b0611, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a586298ff2c415aa558615882b0611, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
