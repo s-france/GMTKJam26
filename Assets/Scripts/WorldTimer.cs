@@ -8,14 +8,16 @@ public class WorldTimer : MonoBehaviour
 {
     public static WorldTimer Instance;
     public UnityEvent TickForward;
-    struct Action
+    public struct Action
     {
         // reference to Action/Event Taken in Timeslot
+        string ActionTaken;
         // Is Last in list flag
+        bool LastInTimeline;
         // 
     };
 
-    List<Action> Timeline;
+    public List<Action> Timeline;
     int CurrentTimeslot = 0;
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,7 @@ public class WorldTimer : MonoBehaviour
 
     void ProcessTick()
     {
+        // Track Action Taken
         CurrentTimeslot++;
     }
 }

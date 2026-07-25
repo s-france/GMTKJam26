@@ -7,11 +7,12 @@ public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats Instance;
 
-    public int Condition; //player health
+    public int Condition = 100; //player health
     public int Progress; //player progress toward end goal
 
     public Slider ConditionDisplay;
     public Slider ProgressDisplay;
+    public bool Sleeping = true; //awake = false
     
 
     // Start is called before the first frame update

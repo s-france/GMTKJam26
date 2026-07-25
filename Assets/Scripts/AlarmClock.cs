@@ -28,25 +28,37 @@ public class AlarmClock : Timer
 
     public void GoToSleep()
     {
-        Debug.Log("sleeping!");
-        int x = Random.Range(5, 11);
-        for (int i = x; i == 0; i--)
-        {
-            SleepTick();
-        }
+        PlayerStats.Instance.Sleeping = true;
+        ActOfSleeping(5, 11);
     }
 
     public void SleepTick()
     {
         // Progress Time By 1
         // Increase Condition By Rand(x)
+        PlayerStats.Instance.Sleeping = false;
     }
 
     public void Snooze()
     {
-        int x = Random.Range(1, 3);
+        ActOfSleeping(1, 3);
+    }
+
+    private void ActOfSleeping(int xTimeS, int xTimeE)
+    { 
+        Debug.Log("SLEEPING!");
+        int x = Random.Range(xTimeS, xTimeE);
+        int y = Random.Range(1, 6);
         for (int i = x; i == 0; i--)
         {
+            if (PlayerStats.Instance.Condition < 100)
+            {
+                PlayerStats.Instance.Condition += y;
+                if (PlayerStats.Instance.Condition > 100)
+                {
+                    PlayerStats.Instance.Condition = 100;
+                }
+            }
             SleepTick();
         }
     }

@@ -20,7 +20,7 @@ public class CancelUI : MonoBehaviour
     void OnClick()
     {
         ClickingController.Instance.GameClickType = false;
-        transform.root.gameObject.SetActive(false);
+        transform.root.GetChild(0).gameObject.SetActive(false);
     }
     
 }
