@@ -6,8 +6,11 @@ using UnityEngine.Events;
 
 public class WorldTimer : MonoBehaviour
 {
+    public int EndTime;
+
     public static WorldTimer Instance;
     public UnityEvent TickForward;
+    /*
     public struct Action
     {
         // reference to Action/Event Taken in Timeslot
@@ -16,9 +19,10 @@ public class WorldTimer : MonoBehaviour
         bool LastInTimeline;
         // 
     };
+    */
 
-    public List<Action> Timeline;
-    int CurrentTimeslot = 0;
+    //public List<Action> Timeline;
+    public int CurrentTimeslot = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,9 +45,20 @@ public class WorldTimer : MonoBehaviour
             // ProcessTick()
     }
 
-    void ProcessTick()
+    public void ProcessTick()
     {
+        Debug.Log("world tick!");
+
         // Track Action Taken
         CurrentTimeslot++;
+
+        //check for endgame state
+        if(CurrentTimeslot >= EndTime)
+        {
+            //end game...
+
+
+        }
+
     }
 }

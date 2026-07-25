@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    public Slider display;
+    public GameObject MenuPopUp;
+
     public int time;
 
     // Start is called before the first frame update
@@ -15,10 +19,10 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        display.value = time;
     }
 
-    void TickForward()
+    public virtual void TickForward()
     {
         AddTime(-1);
     }
@@ -29,6 +33,7 @@ public class Timer : MonoBehaviour
 
         if(time <=0)
         {
+            time = 0;
             EndTimer();
         }
     }
@@ -43,5 +48,14 @@ public class Timer : MonoBehaviour
     {
         
     }
+
+
+    public virtual void OnClick()
+    {
+        MenuPopUp.SetActive(true);
+        ClickingController.Instance.GameClickType = true;
+        //AddTime(1);
+    }
+
 
 }

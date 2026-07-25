@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class AlarmClock : Timer
 {
-    public GameObject MenuPopUp;
     // Start is called before the first frame update
 
     void Start()
@@ -20,7 +19,7 @@ public class AlarmClock : Timer
 
     }
 
-    public void OnClick()
+    public override void OnClick()
     {
         MenuPopUp.SetActive(true);
         ClickingController.Instance.GameClickType = true;
@@ -38,6 +37,8 @@ public class AlarmClock : Timer
     public void SleepTick()
     {
         // Progress Time By 1
+        WorldTimer.Instance.TickForward.Invoke();
+
         // Increase Condition By Rand(x)
         PlayerStats.Instance.Sleeping = false;
     }
@@ -54,7 +55,7 @@ public class AlarmClock : Timer
         Debug.Log("SLEEPING!");
         int x = Random.Range(xTimeS, xTimeE);
         int y = Random.Range(1, 6);
-        for (int i = x; i == 0; i--)
+        for (int i = 0; i<x; i++)
         {
             if (PlayerStats.Instance.Condition < 100)
             {

@@ -29,14 +29,14 @@ public class ClickingController : MonoBehaviour
             {
                 Vector3 screenPos = Input.mousePosition;
                 Vector3 worldPos = mainCam.ScreenToWorldPoint(screenPos);
-                Debug.Log("Game Click! " + worldPos.x + " " + worldPos.y);
+                //Debug.Log("Game Click! " + worldPos.x + " " + worldPos.y);
                 OnGameClick?.Invoke(worldPos);
             }
             else
             { 
                 Vector3 screenPos = Input.mousePosition;
                 Vector3 worldPos = mainCam.ScreenToWorldPoint(screenPos);
-                Debug.Log("UI Click! " + worldPos.x + " " + worldPos.y);
+                //Debug.Log("UI Click! " + worldPos.x + " " + worldPos.y);
                 OnUIClick?.Invoke(worldPos);
             }
         }
