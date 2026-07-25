@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class AlarmClock : Timer
 {
     // Start is called before the first frame update
-
+    public AudioClip sleepSound;
+    public AudioClip alarmSound;
     void Start()
     {
-
+        sleepSound = ClickingController.Instance.SFXs[1];
+        alarmSound = ClickingController.Instance.SFXs[2];
     }
 
     // Update is called once per frame
@@ -50,12 +52,13 @@ public class AlarmClock : Timer
 
     private void ActOfSleeping(int xTimeS, int xTimeE)
     {
+        AudioSource.PlayClipAtPoint(sleepSound, transform.position);
         PlayerStats.Instance.Sleeping = true;
 
         Debug.Log("SLEEPING!");
         int x = Random.Range(xTimeS, xTimeE);
         int y = Random.Range(1, 6);
-        for (int i = 0; i<x; i++)
+        for (int i = 0; i < x; i++)
         {
             if (PlayerStats.Instance.Condition < 100)
             {
@@ -67,6 +70,12 @@ public class AlarmClock : Timer
             }
             SleepTick();
         }
+        Invoke("PlayAlarm", 1.5f);
+    }
+    
+    private void PlayAlarm()
+    { 
+        AudioSource.PlayClipAtPoint(alarmSound, transform.position);
         PlayerStats.Instance.Sleeping = false;
 
     }
