@@ -698,9 +698,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 0}
-  MenuPopUp: {fileID: 1988883662}
+  MenuPopUp: {fileID: 1791109584}
   time: 0
-  eatbutton: {fileID: 0}
+  eatbutton: {fileID: 833361603}
   burnt: 0
 --- !u!1 &418441274
 GameObject:
@@ -2767,6 +2767,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772162297}
   m_CullTransparentMesh: 1
+--- !u!1 &833361603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8386611730022899677, guid: 76a586298ff2c415aa558615882b0611, type: 3}
+  m_PrefabInstance: {fileID: 1871366633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &850031685
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,6 +3629,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 123802563}
+        m_TargetAssemblyTypeName: Laundry, Assembly-CSharp
+        m_MethodName: TickForward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 347375670}
         m_TargetAssemblyTypeName: Laundry, Assembly-CSharp
         m_MethodName: TickForward
         m_Mode: 1
@@ -5844,6 +5861,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761750655}
   m_CullTransparentMesh: 1
+--- !u!1 &1791109584 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5609435796468560639, guid: 76a586298ff2c415aa558615882b0611, type: 3}
+  m_PrefabInstance: {fileID: 1871366633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1821437947
 GameObject:
   m_ObjectHideFlags: 0
