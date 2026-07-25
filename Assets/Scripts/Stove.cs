@@ -4,29 +4,57 @@ using UnityEngine;
 
 public class Stove : Timer
 {
-        public override void TickForward()
-    {
-        base.TickForward();
-        
-        //if cooking:
-        ///tick stove timer
-        /// 
-        /// After a certain amount of time food becomes burnt
 
+    public GameObject eatbutton;
+    public bool burnt = false;
+    ///food is cooked from 5-10 ticks left on timer
+    /// food is burnt for anything under 5
+    /// make a bowl when food is ready
+    /// make a bowl with poop when food is burnt
+    public override void TickForward()
+    {
+        if (time > 0){
+            AddTime(-1);
+        }
+        if(time < 10 && time > 5){
+            FoodReady();
+        }
+        if(time < 5){
+            burnt = true;
+        }
+
+
+    }
+    ///attach to eat food button
+    /// IDK if this works
+    public void eatFood(){
+
+        if(burnt){
+            PlayerStats.Instance.Condition -= 5;
+        }
+        else{
+            if (PlayerStats.Instance.Condition < 100)
+            {
+                PlayerStats.Instance.Condition += 10;
+                if (PlayerStats.Instance.Condition > 100)
+                {
+                    PlayerStats.Instance.Condition = 100;
+                }
+            }
+        }
+        CancelUI cancel = GetComponentInChildren<CancelUI>();
+        cancel.OnClick(); 
     }
 
     public void CookFood()
     {
-        //set stove timer
-
+        SetTime(20);
 
     }
 
     public void FoodReady()
     {
-        ///Gives the player the option to eat food
-        /// 
-        /// Add to players health
+        eatbutton.SetActive(true);
 
     }
 }
