@@ -1227,6 +1227,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1327c6311e21b493e934dd56fd95fc44, type: 3}
   - {fileID: 8300000, guid: daa9a6aea4af44fa59a07ac5c0191fd6, type: 3}
   - {fileID: 8300000, guid: 32eda64ceceeb4ec8b48ebc24988332f, type: 3}
+  - {fileID: 8300000, guid: 679deadfeeb714f9e9749aacb638ab5f, type: 3}
+  - {fileID: 8300000, guid: 46a83a8a574a74ff28bac103d67d3719, type: 3}
+  - {fileID: 8300000, guid: f3d8668d02d45464ab515dcb6949bfe5, type: 3}
+  - {fileID: 8300000, guid: aad64b94b2305401a898e727df8d8320, type: 3}
+  - {fileID: 8300000, guid: 283a877a7e9e842d8a065bb5015e234b, type: 3}
+  - {fileID: 8300000, guid: 7a6626f7234ba4b738f4c6f401120fdd, type: 3}
+  - {fileID: 8300000, guid: a81f13664e21f4a3b8de5ed14c2f8489, type: 3}
+  - {fileID: 8300000, guid: 4a393e3bbe79843d4b475298b9902d97, type: 3}
+  - {fileID: 8300000, guid: c994b80f80d434291b711a1bfbdd5505, type: 3}
+  - {fileID: 8300000, guid: f49de2f4ff88c4af38fce5ed1c171cb6, type: 3}
+  - {fileID: 8300000, guid: 14bed117fadc94b119e71d23a04a15bc, type: 3}
   clickSound: {fileID: 0}
   GameClickType: 0
   OnGameClick:
@@ -9325,6 +9336,8 @@ MonoBehaviour:
   display: {fileID: 0}
   MenuPopUp: {fileID: 999170510}
   time: 3
+  sleepSound: {fileID: 0}
+  alarmSound: {fileID: 0}
 --- !u!1 &2128185761
 GameObject:
   m_ObjectHideFlags: 0
