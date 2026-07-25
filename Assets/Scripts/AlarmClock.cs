@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +31,8 @@ public class AlarmClock : Timer
     {
         PlayerStats.Instance.Sleeping = true;
         ActOfSleeping(5, 11);
+        CancelUI cancel = GetComponentInChildren<CancelUI>();
+        cancel.OnClick();
     }
 
     public void SleepTick()
@@ -42,6 +45,8 @@ public class AlarmClock : Timer
     public void Snooze()
     {
         ActOfSleeping(1, 3);
+        CancelUI cancel = GetComponentInChildren<CancelUI>();
+        cancel.OnClick();
     }
 
     private void ActOfSleeping(int xTimeS, int xTimeE)

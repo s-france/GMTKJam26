@@ -31,7 +31,6 @@ public class WorldTimer : MonoBehaviour
         {
             Destroy(this);
         }
-
         
     }
 
