@@ -481,6 +481,7 @@ MonoBehaviour:
   eatbutton: {fileID: 833361603}
   burnt: 0
   cooking: 0
+  ready: 0
 --- !u!4 &423123031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 525863820986722808, guid: 76a586298ff2c415aa558615882b0611, type: 3}
@@ -5235,18 +5236,18 @@ PrefabInstance:
     - target: {fileID: 2469131876406380150, guid: 76a586298ff2c415aa558615882b0611, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 347375676}
     - target: {fileID: 2469131876406380150, guid: 76a586298ff2c415aa558615882b0611, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2469131876406380150, guid: 76a586298ff2c415aa558615882b0611, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToSleep
+      value: eatFood
       objectReference: {fileID: 0}
     - target: {fileID: 2469131876406380150, guid: 76a586298ff2c415aa558615882b0611, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AlarmClock, Assembly-CSharp
+      value: Stove, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2469131876406380150, guid: 76a586298ff2c415aa558615882b0611, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
