@@ -17,6 +17,7 @@ public class Laundry : Timer
 
     public GameObject WashButton;
     public GameObject EmptyButton;
+    public GameObject Laundryalert;
 
     void Start()
     {
@@ -42,6 +43,7 @@ public class Laundry : Timer
         } else if (loaded)
         {
             time = 0;
+            Laundryalert.SetActive(true);
             done = true;
         } else
         {
@@ -100,7 +102,7 @@ public class Laundry : Timer
             loaded = false;
             time = 0;
         }
-
+        Laundryalert.SetActive(false);
         CancelUI cancel = GetComponentInChildren<CancelUI>();
         cancel.OnClick(); 
         
