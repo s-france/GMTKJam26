@@ -13,6 +13,9 @@ public class PlayerStats : MonoBehaviour
     public Slider ConditionDisplay;
     public Slider ProgressDisplay;
     public bool Sleeping = true; //awake = false
+    public bool QuirkedUp = false;
+
+    public int QuirkedUpTimer = 0;
     
 
     // Start is called before the first frame update

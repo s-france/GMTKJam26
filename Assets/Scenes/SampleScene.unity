@@ -591,15 +591,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5566987710589808580, guid: 76a586298ff2c415aa558615882b0611, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.316
+      value: -0.392
       objectReference: {fileID: 0}
     - target: {fileID: 5566987710589808580, guid: 76a586298ff2c415aa558615882b0611, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5566987710589808580, guid: 76a586298ff2c415aa558615882b0611, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.75
+      value: -1.02
       objectReference: {fileID: 0}
     - target: {fileID: 5609435796468560639, guid: 76a586298ff2c415aa558615882b0611, type: 3}
       propertyPath: m_Name
@@ -3790,6 +3790,8 @@ MonoBehaviour:
   ConditionDisplay: {fileID: 1576270150}
   ProgressDisplay: {fileID: 1238054950}
   Sleeping: 1
+  QuirkedUp: 0
+  QuirkedUpTimer: 0
 --- !u!1 &1116462943
 GameObject:
   m_ObjectHideFlags: 0
