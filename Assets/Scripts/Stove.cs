@@ -14,6 +14,8 @@ public class Stove : Timer
     public AudioClip eatingsound;
     public SpriteRenderer stovestatus;
 
+    public GameObject stovealert;
+
     public Sprite[] stovesprite;
 
     ///food is cooked from 5-10 ticks left on timer
@@ -80,6 +82,7 @@ public class Stove : Timer
                 }
             }
         }
+        stovealert.SetActive(false);
         stovestatus.sprite = stovesprite[0];
         eatbutton.SetActive(false);
 
@@ -110,6 +113,7 @@ public class Stove : Timer
     public void FoodReady()
     {
         Debug.Log("Food Ready!");
+        stovealert.SetActive(true);
         //cooking = false;
         ready = true;
         eatbutton.SetActive(true);

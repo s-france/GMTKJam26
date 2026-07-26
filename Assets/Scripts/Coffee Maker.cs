@@ -11,6 +11,7 @@ public class CoffeeMaker : Timer
     public bool Brewing = false;
     public bool Cold = false;
     public AudioClip BrewingSound;
+    public GameObject coffeealert;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +53,7 @@ public class CoffeeMaker : Timer
         if (time < 8 && time > 5)
         {
             Ready = true;
+            coffeealert.SetActive(true);
             CoffeeReady();
         }
 
@@ -88,6 +90,7 @@ public class CoffeeMaker : Timer
         PlayerStats.Instance.QuirkedUp = true;
         PlayerStats.Instance.QuirkedUpTimer = 3;
         DrinkButton.SetActive(false);
+        coffeealert.SetActive(false);
 
         time = 0;
         CancelUI cancel = GetComponentInChildren<CancelUI>();
