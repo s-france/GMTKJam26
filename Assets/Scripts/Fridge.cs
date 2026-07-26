@@ -20,10 +20,10 @@ public class Fridge : Timer
 
         if (PlayerStats.Instance.Condition < 100)
         {
-            for(int i =0; i <3; i++){
+
             WorldTimer.Instance.TickForward.Invoke();
-            }
-            PlayerStats.Instance.Condition += 1;
+    
+            PlayerStats.Instance.Condition += Random.Range(1,6);
             if (PlayerStats.Instance.Condition > 100)
             {
                 PlayerStats.Instance.Condition = 100;
