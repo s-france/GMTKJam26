@@ -20,6 +20,15 @@ public class Stove : Timer
         {
             display.value = time-5;
 
+            if (display.value <= 0)
+            {
+                display.gameObject.SetActive(false);
+            } else
+            {
+                display.gameObject.SetActive(true);
+
+            }
+
         }
     }
     

@@ -23,6 +23,15 @@ public class Timer : MonoBehaviour
         {
             display.value = time;
 
+            if (display.value <= 0)
+            {
+                display.gameObject.SetActive(false);
+            } else
+            {
+                display.gameObject.SetActive(true);
+
+            }
+
         }
     }
 
