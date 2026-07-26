@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CoffeeMaker : Timer
 {
@@ -50,6 +51,16 @@ public class CoffeeMaker : Timer
             Cold = true;
             Ready = true;
         }
+
+        if (PlayerStats.Instance.QuirkedUpTimer == 0)
+        {
+            PlayerStats.Instance.QuirkedUp = false;
+        }
+
+        if (PlayerStats.Instance.QuirkedUp)
+        {
+            PlayerStats.Instance.QuirkedUpTimer -= 1;
+        }
     }
 
     public void DrinkCoffee()
@@ -65,6 +76,8 @@ public class CoffeeMaker : Timer
         {
             PlayerStats.Instance.Condition -= 5;
         }
+        PlayerStats.Instance.QuirkedUp = true;
+        PlayerStats.Instance.QuirkedUpTimer = 3;
         DrinkButton.SetActive(false);
 
         time = 0;
@@ -107,7 +120,6 @@ public class CoffeeMaker : Timer
         //cooking = false;
         Ready = true;
         DrinkButton.SetActive(true);
-        MakeButton.SetActive(false);
 
     }
 }

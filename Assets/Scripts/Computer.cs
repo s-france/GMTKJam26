@@ -15,7 +15,14 @@ public class Computer : Timer
     {
         AudioSource.PlayClipAtPoint(TypingSound, transform.position);
         WorldTimer.Instance.TickForward.Invoke();
-        PlayerStats.Instance.Progress += Random.Range(1, 5);
+        if (PlayerStats.Instance.QuirkedUp == true)
+        {
+            PlayerStats.Instance.Progress += Random.Range(2, 7);
+        }
+        else
+        { 
+            PlayerStats.Instance.Progress += Random.Range(1, 6);
+        }
         CancelUI cancel = GetComponentInChildren<CancelUI>();
         cancel.OnClick();
     }
