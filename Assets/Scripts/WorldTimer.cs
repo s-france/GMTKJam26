@@ -63,10 +63,10 @@ public class WorldTimer : MonoBehaviour
         PlayerStats.Instance.Condition -= 3;
 
         //check for endgame state
-        if(CurrentTimeslot >= EndTime)
+        if(CurrentTimeslot >= EndTime || PlayerStats.Instance.Condition <= 0 || PlayerStats.Instance.Progress >=100)
         {
             //end game...
-
+            EndGame();
 
         }
 
@@ -84,10 +84,12 @@ public class WorldTimer : MonoBehaviour
         if (PlayerStats.Instance.Condition > 0 && PlayerStats.Instance.Progress >= 100)
         {
             //win
+            SceneManager.LoadScene("WinScene");
 
         } else
         {
             //lose
+            SceneManager.LoadScene("LoseScene");
 
         }
     }
