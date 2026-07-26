@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats Instance;
 
     public int Condition = 100; //player health
-    public int Progress; //player progress toward end goal
+    public int Progress = 0; //player progress toward end goal
 
     public Slider ConditionDisplay;
     public Slider ProgressDisplay;
