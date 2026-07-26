@@ -73,6 +73,13 @@ public class Laundry : Timer
         
     }
 
+    public override void OnClick()
+    {
+        MenuPopUp.SetActive(true);
+        ClickingController.Instance.GameClickType = true;
+        //AddTime(1);
+    }
+
 
 
 
