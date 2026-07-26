@@ -15,12 +15,7 @@ public class AlarmClock : Timer
         alarmSound = ClickingController.Instance.SFXs[2];
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+  
     public override void OnClick()
     {
         MenuPopUp.SetActive(true);
