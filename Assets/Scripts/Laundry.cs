@@ -13,9 +13,15 @@ public class Laundry : Timer
 
     void Start()
     {
+        Invoke("Init", .1f);
+    }
+
+    void Init()
+    {
         StartSound = ClickingController.Instance.SFXs[4];
         EndSound = ClickingController.Instance.SFXs[5];
     }
+
     public override void TickForward()
     {
         //running a load
