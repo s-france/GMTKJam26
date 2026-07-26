@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
+
     public static PlayerStats Instance;
 
     public int Condition = 100; //player health
@@ -39,4 +41,7 @@ public class PlayerStats : MonoBehaviour
         ProgressDisplay.value = Progress;
         
     }
+
+
+
 }

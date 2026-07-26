@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class WorldTimer : MonoBehaviour
 {
+    public bool GameStarted = false;
+    public bool GameOver = false;
+
+    public GameObject StartMenu;
+    public GameObject EndMenu;
+
+
     public int EndTime;
 
     public static WorldTimer Instance;
@@ -62,5 +70,25 @@ public class WorldTimer : MonoBehaviour
 
         }
 
+    }
+
+
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void EndGame()
+    {
+        if (PlayerStats.Instance.Condition > 0 && PlayerStats.Instance.Progress >= 100)
+        {
+            //win
+
+        } else
+        {
+            //lose
+
+        }
     }
 }
