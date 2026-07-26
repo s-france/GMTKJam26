@@ -6,9 +6,13 @@ public class Stove : Timer
 {
 
     public GameObject eatbutton;
+    public GameObject cookbutton;
     public bool burnt = false;
     public bool cooking = false;
     public bool ready = false;
+    public AudioClip cookingsound;
+    public AudioClip eatingsound;
+
     ///food is cooked from 5-10 ticks left on timer
     /// food is burnt for anything under 5
     /// make a bowl when food is ready
@@ -57,7 +61,8 @@ public class Stove : Timer
     public void eatFood(){
         cooking = false;
         ready = false;
-        
+
+        AudioSource.PlayClipAtPoint(eatingsound, transform.position);
         if(burnt){
             PlayerStats.Instance.Condition -= 5;
         }
@@ -83,9 +88,11 @@ public class Stove : Timer
     {
         if (time <= 0 && !cooking)
         {
+            AudioSource.PlayClipAtPoint(cookingsound, transform.position);
             cooking = true;
             SetTime(20);
         }
+
 
         CancelUI cancel = GetComponentInChildren<CancelUI>();
         cancel.OnClick(); 
@@ -114,6 +121,12 @@ public class Stove : Timer
         {
             eatbutton.SetActive(false);
 
+        }
+        if(cooking == true){
+            cookbutton.SetActive(false);
+        }
+        else {
+            cookbutton.SetActive(true);
         }
 
     }
