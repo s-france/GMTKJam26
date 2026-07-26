@@ -12,11 +12,15 @@ public class Stove : Timer
     public bool ready = false;
     public AudioClip cookingsound;
     public AudioClip eatingsound;
+    public SpriteRenderer stovestatus;
+
+    public Sprite[] stovesprite;
 
     ///food is cooked from 5-10 ticks left on timer
     /// food is burnt for anything under 5
     /// make a bowl when food is ready
     /// make a bowl with poop when food is burnt
+    /// stovestatus.setsprite(stovesprite[i])
     
     public override void Update()
     {
@@ -76,6 +80,7 @@ public class Stove : Timer
                 }
             }
         }
+        stovestatus.sprite = stovesprite[0];
         eatbutton.SetActive(false);
 
         time = 0;
@@ -91,6 +96,8 @@ public class Stove : Timer
             AudioSource.PlayClipAtPoint(cookingsound, transform.position);
             cooking = true;
             SetTime(20);
+            stovestatus.sprite = stovesprite[1];
+            
         }
 
 
@@ -106,6 +113,7 @@ public class Stove : Timer
         //cooking = false;
         ready = true;
         eatbutton.SetActive(true);
+        stovestatus.sprite = stovesprite[2];
 
     }
 
