@@ -12,7 +12,7 @@ public class PlayerStats : MonoBehaviour
 
     public Slider ConditionDisplay;
     public Slider ProgressDisplay;
-    public bool Sleeping = true; //awake = false
+    public bool Sleeping = false; //awake = false
     public bool QuirkedUp = false;
 
     public int QuirkedUpTimer = 0;
@@ -24,6 +24,7 @@ public class PlayerStats : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            Sleeping = false;
         } else
         {
             Destroy(this);
