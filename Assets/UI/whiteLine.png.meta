@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ceaed16c06b7449b49ebcb61b0f0e84f
+guid: 11cca8ebe8dba4edbbee69edb6b1bac6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2431532706291573500
-    second: timer-bar_0
+      213: -1949642208395455179
+    second: whiteLine_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: timer-bar_0
+      name: whiteLine_0
       rect:
         serializedVersion: 2
         x: 0
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf2e0421d1a8eb120800000000000000
-      internalID: 2431532706291573500
+      spriteID: 5351b79bdba71f4e0800000000000000
+      internalID: -1949642208395455179
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      timer-bar_0: 2431532706291573500
+      whiteLine_0: -1949642208395455179
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
