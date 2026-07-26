@@ -71,12 +71,13 @@ public class AlarmClock : Timer
             SleepTick();
         }
         Invoke("PlayAlarm", 1.5f);
+        PlayerStats.Instance.Sleeping = false;
+
     }
     
     private void PlayAlarm()
     { 
         AudioSource.PlayClipAtPoint(alarmSound, transform.position);
-        PlayerStats.Instance.Sleeping = false;
 
     }
 }

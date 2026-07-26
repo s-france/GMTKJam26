@@ -67,7 +67,6 @@ public class Timer : MonoBehaviour
     {
         MenuPopUp.SetActive(true);
         ClickingController.Instance.GameClickType = true;
-        //AddTime(1);
     }
 
 

@@ -27,5 +27,6 @@ public class LaundryPile : MonoBehaviour
             sr.enabled = false;
         }
         
+        
     }
 }
