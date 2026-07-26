@@ -125,7 +125,7 @@ public class Stove : Timer
     public override void OnClick()
     {
         base.OnClick();
-
+        
         if (ready == true)
         {
             eatbutton.SetActive(true);
