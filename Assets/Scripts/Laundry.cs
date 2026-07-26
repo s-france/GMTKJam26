@@ -8,6 +8,9 @@ public class Laundry : Timer
 
     public bool loaded = false;
 
+    public GameObject LaundryPile;
+    public GameObject Basket;
+
     public AudioClip StartSound;
     public AudioClip EndSound;
 
