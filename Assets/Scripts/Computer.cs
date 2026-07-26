@@ -11,12 +11,6 @@ public class Computer : Timer
         TypingSound = ClickingController.Instance.SFXs[11];
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void DoWork()
     {
         AudioSource.PlayClipAtPoint(TypingSound, transform.position);
