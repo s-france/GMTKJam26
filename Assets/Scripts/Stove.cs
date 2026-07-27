@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Stove : Timer
 {
@@ -13,6 +14,8 @@ public class Stove : Timer
     public AudioClip cookingsound;
     public AudioClip eatingsound;
     public SpriteRenderer stovestatus;
+
+    public GameObject outline;
 
     public GameObject stovealert;
 
@@ -121,11 +124,21 @@ public class Stove : Timer
 
     }
 
+    public void OnMouseOver()
+    {
+        outline.SetActive(true);
+    }
+
+    public void OnMouseExit()
+    {
+        outline.SetActive(false);
+    }
+
 
     public override void OnClick()
     {
         base.OnClick();
-        
+
         if (ready == true)
         {
             eatbutton.SetActive(true);
