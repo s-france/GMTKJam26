@@ -18,6 +18,7 @@ public class Laundry : Timer
     public GameObject WashButton;
     public GameObject EmptyButton;
     public GameObject Laundryalert;
+    public GameObject outline;
 
     void Start()
     {
@@ -106,6 +107,16 @@ public class Laundry : Timer
         CancelUI cancel = GetComponentInChildren<CancelUI>();
         cancel.OnClick(); 
         
+    }
+
+    public void OnMouseOver()
+    {
+        outline.SetActive(true);
+    }
+
+    public void OnMouseExit()
+    {
+        outline.SetActive(false);
     }
 
     public override void OnClick()
